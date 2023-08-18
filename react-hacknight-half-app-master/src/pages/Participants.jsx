@@ -17,7 +17,7 @@ const Participants = () => {
       <div className="row">
         <div className="col">
           <List participants={participant} getAll={getAll} loader={loader}/>
-          <Empty notes={[]} />
+          <Empty notes={participant} />
           {load && <Loader />}
         </div>
       </div>
