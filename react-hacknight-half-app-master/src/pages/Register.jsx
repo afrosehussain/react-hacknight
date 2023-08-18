@@ -20,6 +20,12 @@ const Register = () => {
     setLoad(state);
   };
   const navigate = useNavigate();
+  const handleReset = () => {
+    setCountry('')
+    setEmail('')
+    setFullName('')
+    setGithub('')
+  }
   const handleSubmit = async event => {
     try{
       if (fullName=='' || email=='' || country=='' || github==''){
@@ -44,7 +50,7 @@ const Register = () => {
 }
     catch(error){
       window.alert(error)
-      
+
     } finally{
       setCountry('')
       setEmail('')
@@ -91,7 +97,7 @@ const Register = () => {
         <button className="btn btn-danger me-2" type="submit">
           <FaMeteor /> Register
         </button>
-        <button className="btn btn-dark" type="submit">
+        <button className="btn btn-dark" type="reset" onClick={handleReset}>
           <FaRotate /> Reset
         </button>
       </form>
